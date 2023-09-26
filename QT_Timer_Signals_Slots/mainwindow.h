@@ -22,7 +22,7 @@ private slots:
     void on_pb_start_clicked();
     void on_pb_clear_clicked();
     void on_pb_lap_clicked();
-    void getTime(char *receiveTime);
+    void getTime(char *receiveTime, char *receiveLapTime);
 
 private:
     Ui::MainWindow *ui;

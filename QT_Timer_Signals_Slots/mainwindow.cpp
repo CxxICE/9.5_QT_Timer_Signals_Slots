@@ -7,12 +7,11 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     setWindowFlags( windowFlags() | Qt::WindowMaximizeButtonHint );
-#ifdef QT_DEBUG
-    setWindowIcon(QIcon("../timer_32px.ico"));
-#elif
-    QString path = QDir::currentPath();
-    setWindowIcon(QIcon(path + "/timer_32px.ico"));
-#endif
+    QPalette pal;
+    pal.setColor(ui->l_lap_time->foregroundRole(), QColor(62,41,247,100));
+    ui->l_lap_time->setPalette(pal);
+    //ui->tb_laps->setTextColor(QColor(62,41,247,100));
+    setWindowIcon(QIcon(":/window/img/timer_32px.ico"));
     watch = new StopWatch(this);
     lap = 0;
     QObject::connect(watch, &StopWatch::sig_time, this, &MainWindow::getTime, Qt::AutoConnection);
@@ -54,12 +53,15 @@ void MainWindow::on_pb_lap_clicked()
     QString tmp = "Круг ";
     tmp += QString::number(lap);
     tmp += ", время: ";
-    tmp += watch->curTime();
+    char lapTime[12] = "00:00:00.00";
+    watch->newLap(lapTime);
+    tmp += lapTime;
     ui->tb_laps->append(tmp);
 }
 
-void MainWindow::getTime(char *receiveTime)
+void MainWindow::getTime(char *receiveTime, char *receiveLapTime)
 {
     ui->l_time->setText(receiveTime);
+    ui->l_lap_time->setText(receiveLapTime);
 }
 

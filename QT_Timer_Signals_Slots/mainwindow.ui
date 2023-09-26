@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>288</width>
-    <height>258</height>
+    <width>380</width>
+    <height>295</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -21,21 +21,14 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="0">
+    <item row="2" column="0">
      <widget class="QPushButton" name="pb_start">
       <property name="text">
        <string>Старт</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="1">
-     <widget class="QPushButton" name="pb_clear">
-      <property name="text">
-       <string>Очистить</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="2">
+    <item row="2" column="2">
      <widget class="QPushButton" name="pb_lap">
       <property name="enabled">
        <bool>false</bool>
@@ -45,7 +38,7 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="0" colspan="3">
+    <item row="3" column="0" colspan="3">
      <widget class="QTextBrowser" name="tb_laps">
       <property name="minimumSize">
        <size>
@@ -79,7 +72,42 @@
        </font>
       </property>
       <property name="text">
-       <string>00:00:00:00</string>
+       <string>00:00:00.00</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QPushButton" name="pb_clear">
+      <property name="text">
+       <string>Очистить</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="3">
+     <widget class="QLabel" name="l_lap_time">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>270</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>00:00:00.00</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>

@@ -20,9 +20,9 @@ set(PROJECT_SOURCES
         mainwindow.ui
         stopwatch.h
         stopwatch.cpp
+        resources.qrc
+        app.o
 )
-
-
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(QT_Timer_Signals_Slots
